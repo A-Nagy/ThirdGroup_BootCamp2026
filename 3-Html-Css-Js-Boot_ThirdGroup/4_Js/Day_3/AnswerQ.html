@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Answer and Train</title>
+</head>
+<body>
+    <script>
+        let x =Math.round( Math.random()*10);
+        let y =Math.round( Math.random()*10);
+        let answer =parseInt( prompt(`what's ${x} * ${y} ? `));
+
+        if(answer== y*x)
+        {
+            document.write("<h1>Correct</h1>") ;
+        }
+        else
+        {
+            document.write("<h1>Wrong</h1>") ;
+        }
+ 
+    </script>
+</body>
+
+</html>

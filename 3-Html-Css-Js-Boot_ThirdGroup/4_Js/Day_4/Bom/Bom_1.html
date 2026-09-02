@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showAlert()">Show Alert</button>
+    <button onclick="gotoGoogle()">Go TO Google</button>
+    <button onclick="OpenWindow()">Open BlankPage</button>
+    <p id="ShowInfo"></p>
+
+<script>
+
+
+
+const screeninfo=document.getElementById("ShowInfo");
+const items = [
+      `اسم المتصفح:  ${navigator.appName}`,
+      `إصدار المتصفح:${navigator.appVersion}`,
+      `نظام التشغيل: ${navigator.platform}`,
+      `لغة المتصفح:  ${navigator.language}`
+    ];
+
+    items.forEach(item => {
+      const li = document.createElement("li");
+      li.innerText = item;
+      screeninfo.appendChild(li);
+    });
+//screeninfo.innerText=
+//`Screen Width : ${screen.width} \n
+//Screen Height :${screen.height} `;
+function showAlert()
+{
+    alert("Bom In JavaScript");
+}
+function gotoGoogle()
+{
+    location.href="https://www.google.com";
+}
+function OpenWindow()
+{
+ window.open("","_blank");
+}
+
+
+</script>
+
+</body>
+</html>

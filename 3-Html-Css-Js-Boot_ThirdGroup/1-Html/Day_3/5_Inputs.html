@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Forms 2 </title>
+</head>
+<body>
+    <h1>New Form</h1>
+    <form>
+        <label for="Name">Name : </label>
+        <input type="text" id="name" name="name" required minlength="3">
+<br><br>
+        <label for="password">Password : </label>
+        <input type="password" id="password" name="password" required minlength="6">
+<br><br>
+        <label for="email">Email : </label>
+        <input type="email" id="email" name="email" required>
+<br><br>
+        <label for="number">Number : </label>
+        <input type="number" id="number" name="number" min="0"  max="100">
+<br><br>
+        <label for="date">Date : </label>
+        <input type="date" id="date" name="date"  >
+<br><br>
+        <label for="color">Color : </label>
+        <input type="color" id="color" name="color" >
+<br><br>
+        <label for="phone">phone </label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{11}" title="ادخل رقم الهاتف المكون من 11 رقم" >
+<br><br>
+<h3>اختيار النوع</h3>
+<input type="radio" name="gender" value="male" id="male" >
+<label for="male">ذكر</label>
+<input type="radio" name="gender" value="female" id="female" >
+<label for="female">انثى</label>
+<br><br><br>
+<h3>اختيار الهوايات</h3>
+<input type="checkbox" name="ho" value="reading" id="reading" >
+<label for="reading">قراءه</label>
+<input type="checkbox" name="ho" value="sports" id="sports" >
+<label for="sports">الرياضة</label>
+<input type="checkbox" name="ho" value="coding" id="coding" >
+<label for="coding">تكويد</label>
+<input type="checkbox" name="ho" value="hack" id="hack" >
+<label for="hack">الاختراق</label>
+<br><br>
+
+<h3>اختيار الدوله</h3>
+<label for="countery1">اختار دولتك </label>
+
+<select name="countery1" id="countery1">
+    <option disabled >اختار دولتك</option>
+    <option value="egypt">مصر</option>
+    <option value="KSA">السعودية</option>
+    <option value="UAE">الامارات</option>
+</select>
+
+<br><br>
+<label for="countery">اختار دولتك </label>
+<input list="countery">
+<datalist name="countery" id="countery">
+    <option  disabled>اختار دولتك</option>
+    <option value="egypt">مصر</option>
+    <option value="KSA">السعودية</option>
+    <option value="UAE">الامارات</option>
+</datalist>
+<br><br>
+        <label for="file">Upload File : </label>
+        <input type="file" id="file" name="file" >
+<br><br>
+<button type="submit"> Submit </button>
+    </form>
+</body>
+</html>

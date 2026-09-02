@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body> 
+    <h2>Task 2 Show All Data </h2>
+    <label >Name : </label> <input type="text"   id="name"><br>
+    <label >Age  : </label> <input type="number" id="age"><br>
+    <label >Email: </label> <input type="email"  id="email"><br>
+
+    <button onclick="ShowAllData()">Show Data</button>
+
+    <div id="result"></div>
+    <script>
+       function ShowAllData()
+       {
+        let name  = document.getElementById("name").value ;
+        let age   = document.getElementById("age").value
+        let email = document.getElementById("email").value
+
+        if( !name || !age || !email )
+        {
+            document.getElementById("result").innerText = "Pls Fill all Data";
+        } else
+        {
+            document.getElementById("result").innerText = `Name : ${name} \n age: ${age} \n Email : ${email} `;
+        }
+       }
+    </script>
+</body>
+</html>

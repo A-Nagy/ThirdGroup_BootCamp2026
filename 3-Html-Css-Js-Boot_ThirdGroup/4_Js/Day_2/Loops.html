@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Loops </h2>
+    <h3>Display Numbers from 1 to 10</h3>
+    <ul id="NumberList">
+        
+    </ul>
+    <script>
+        const samar = document.getElementById("NumberList");
+        for(let i = 1 ; i <= 10; i++)
+        {
+            const item = document.createElement("li");
+            item.textContent= "Number: = "+ i ;
+            samar.appendChild(item);
+        }
+
+    </script>
+
+<h2>Example 2 Table </h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Number</th>
+            <th>Square</th>
+        </tr>
+    </thead>
+    <tbody id="SquareTable">
+
+    </tbody>
+</table>
+<script>
+    const tablebody= document.getElementById("SquareTable");
+    for(let x =1 ; x <= 5 ; x++ )
+    {
+        const row = document.createElement("tr");
+        row.innerHTML=` <td>${x}</td><td>${x * x}</td>`;
+        tablebody.appendChild(row)
+
+    }
+</script>
+
+
+<h2>Example 3 Table </h2>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody id="StudentTable">
+    </tbody>
+</table>
+<script>
+    const Students=
+    [
+      { name: "Sara", age: 20, grade: "A"  },
+      { name: "Ali" , age: 22, grade: "B+" },
+      { name: "Lina", age: 19, grade: "A-" },
+      { name: "Omar", age: 21, grade: "B"  }   
+    ];
+
+    const stbody= document.getElementById("StudentTable");
+
+    for(let y = 0 ; y < Students.length ; y++ )
+    {
+        const row = document.createElement("tr");
+        row.innerHTML=
+        `
+            <td>${Students[y].name}</td>
+            <td>${Students[y].age}</td>
+            <td>${Students[y].grade}</td> 
+        `
+        ;
+        stbody.appendChild(row)
+
+    }
+</script>
+
+
+<h2>Example 3-1 Table </h2>
+<table border="1" id="StudentTable2">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Grade</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+<script>
+    const Studentslist=
+    [
+      { name: "Sara", age: 20, grade: "A"  },
+      { name: "Ali" , age: 22, grade: "B+" },
+      { name: "Lina", age: 19, grade: "A-" },
+      { name: "Omar", age: 21, grade: "B"  }   
+    ];
+
+    const  StableBody= document.querySelector("#StudentTable2 tbody");
+
+    for(let z = 0 ; z < Studentslist.length ; z++ )
+    {
+        const row = document.createElement("tr");
+        row.innerHTML=` 
+            <td>${Studentslist[z].name}</td>
+            <td>${Studentslist[z].age}</td>
+            <td>${Studentslist[z].grade}</td>
+        `;
+        StableBody.appendChild(row)
+    }
+</script>
+
+</body>
+</html>

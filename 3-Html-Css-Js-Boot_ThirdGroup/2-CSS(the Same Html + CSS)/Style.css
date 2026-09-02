@@ -1,0 +1,23 @@
+/*
+--border : 
+solid
+dashed
+double 
+
+--box : 
+backgroung-color
+padding
+border 
+width 300px 100%
+
+*/
+section
+{
+    transition: backgroung-color 0.5s ease , transform 0.3s;
+}
+.trasition-box:hover
+{
+    background-color: brown;
+    transform: scale(1.1);
+    animation: slide 3s infinite
+}

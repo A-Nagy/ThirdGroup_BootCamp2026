@@ -1,0 +1,102 @@
+body
+{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f9f9f9;
+    text-align: center;
+    color:#333;
+    padding: 25px;
+}
+h1{
+    color: rgb(197, 178, 8);
+    margin-bottom: 20px;
+}
+h2{
+  color: rgb(137, 124, 5);
+  margin-bottom: 15px;
+}
+h3{
+  color: rgb(106, 96, 11);
+  margin-bottom: 10px;
+}
+p{
+margin: 15px;
+font-size: 18;
+color: tomato;}
+ol
+{
+    color: darkorange;
+    margin-top: 20px;
+    list-style-type: lower-greek;
+}
+ul
+{
+    color: darkorange;
+    margin-top: 20px;
+    list-style-type: square;
+}
+dl dt
+{
+    font-weight: bold;
+    color: rgb(37, 37, 223);
+    margin: 15px;
+}
+dl dd
+{
+    font-weight: lighter;
+    color: rgb(22, 22, 144);
+   
+}
+mark{
+    color: aqua;
+    background-color: red;
+}
+u
+{
+    color: brown;
+ }
+ sup
+ {
+    vertical-align:top;
+ }
+ a
+ {
+    text-decoration: none;
+    font-size: 20px;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    padding: 2px 5px;
+ }
+ a:hover
+ {
+    text-decoration: none;
+    font-size: 25px;
+    border: 2px solid #05315f;
+    border-radius: 5px;
+    padding: 5px 3px;
+ }
+ img
+ {
+    width: 300px;
+    height: 200px;
+    border: 3px solid blue;
+    border-radius: 10px;
+ }
+ img:hover
+ {
+    transform: scale(1.05);
+    border: 3px solid red;
+    border-radius: 10px;
+ }
+.bluecolor
+{
+    color: blue;
+    text-decoration: underline;
+}
+#SParagraph
+{
+    color: chartreuse;
+    text-align :center;
+    text-shadow: 15px;
+    margin: 25px;
+
+}

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{43297301-1984-45A1-9601-746813626E2B}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>Csharp_3</RootNamespace>
+    <AssemblyName>Csharp_3</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Day_2\Controls_If_5.cs" />
+    <Compile Include="Day_2\Controls_If_basic_4.cs" />
+    <Compile Include="Day_2\Controls_Switch_6.cs" />
+    <Compile Include="Day_1\Error_Types_1.cs" />
+    <Compile Include="Day_1\First_Tasks_3.cs" />
+    <Compile Include="Day_1\Variable_in_out_puts_2.cs" />
+    <Compile Include="Day_3\Fist_system_7.cs" />
+    <Compile Include="Day_3\Loops_Do_While_10.cs" />
+    <Compile Include="Day_3\Loops_For_8.cs" />
+    <Compile Include="Day_3\Loops_While_9.cs" />
+    <Compile Include="Day_3\Tasks_11.cs" />
+    <Compile Include="Day_4\Array_13.cs" />
+    <Compile Include="Day_4\LoopTasks_12.cs" />
+    <Compile Include="Day_5\CodeDivide_Functions_15.cs" />
+    <Compile Include="Day_5\Combain_System_1_Update_14.cs" />
+    <Compile Include="Day_5\S_Functions_16\AllFunctions_16_2.cs" />
+    <Compile Include="Day_5\S_Functions_16\RunMain_16_1.cs" />
+    <Compile Include="Day_6\Simple_Clac_Retun\CalcStart_19_2.cs" />
+    <Compile Include="Day_6\Simple_Clac_Retun\CalC_Proccess_19_1.cs" />
+    <Compile Include="Day_6\Solve_Simple_Calc\CalcStart_17_2.cs" />
+    <Compile Include="Day_6\Solve_Simple_Calc\CalC_Proccess_17_1.cs" />
+    <Compile Include="Day_6\Explain_18.cs" />
+    <Compile Include="Day_7\FirstDashBoard\MainClass.cs" />
+    <Compile Include="Day_7\SecandDashBoard\EmployeeClass.cs" />
+    <Compile Include="Day_7\SecandDashBoard\FunctioandMainClass.cs" />
+    <Compile Include="Day_7\SecandDashBoard\PatientClass.cs" />
+    <Compile Include="Day_7\SecandDashBoard\StudentClass.cs" />
+    <Compile Include="Day_Open\Employee_21\Accountant.cs" />
+    <Compile Include="Day_Open\Employee_21\Developer.cs" />
+    <Compile Include="Day_Open\Employee_21\Employees.cs" />
+    <Compile Include="Day_Open\Employee_21\Manager.cs" />
+    <Compile Include="Day_Open\Employee_21\testEmployee.cs" />
+    <Compile Include="Day_Open\IPrintable.cs" />
+    <Compile Include="Day_Open\Patient_23\Patients.cs" />
+    <Compile Include="Day_Open\Patient_23\testPatient.cs" />
+    <Compile Include="Day_Open\Person.cs" />
+    <Compile Include="Day_Open\Room_20\Rooms.cs" />
+    <Compile Include="Day_Open\Room_20\testRoom.cs" />
+    <Compile Include="Day_Open\Student_22\Students.cs" />
+    <Compile Include="Day_Open\Student_22\test_Student.cs" />
+    <Compile Include="Day_Open\NewDay_Explain_Abstract_24\Circle.cs" />
+    <Compile Include="Day_Open\NewDay_Explain_Abstract_24\Rectangle.cs" />
+    <Compile Include="Day_Open\NewDay_Explain_Abstract_24\Shap.cs" />
+    <Compile Include="Day_Open\NewDay_Explain_Abstract_24\TestSHaps.cs" />
+    <Compile Include="Day_Open\Task1_EmployeesSystem\TestTask1.cs" />
+    <Compile Include="Day_Open\Task2_StudentSystem\TestTask2.cs" />
+    <Compile Include="Revision\ConnectDb\ConnectDb.cs" />
+    <Compile Include="Revision\RevisionOnOOP.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

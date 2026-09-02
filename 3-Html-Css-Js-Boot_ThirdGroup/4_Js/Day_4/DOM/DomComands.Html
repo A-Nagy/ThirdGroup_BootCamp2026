@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dom Commands </title>
+</head>
+<body>
+   
+<div id="MyDiv"> 
+   <b>Hello</b>  World!
+   <p class="title" id="pre">Welcome</p>
+</div>
+<script>
+    //const title = document.getElementById("pre");
+      const title = document.querySelector(".title");
+      title.innerText = "JS for Third Group" ; 
+
+      const div = document.querySelector("#MyDiv");
+      console.log(div.innerHTML);
+      console.log(div.innerText);
+      console.log(div.textContent);
+</script>
+
+<div>
+    <h3>Text Mirror </h3>
+    <input type="text" id="inputbox" placeholder="Enter Text Here">
+    <p>Writeing right Now : <span id="outputbox"></span> </p>
+    <script>
+        const input  = document.getElementById("inputbox");
+        const output = document.getElementById("outputbox");
+        input.addEventListener("keyup",()=>{output.innerText=input.value;});
+
+    </script>
+</div>
+<div>
+
+    <button id="mybtn">Click Me </button>
+
+    <input type="text"  id="myinput" placeholder="Type Here...." >
+
+    <ul id="mylist">
+        <li>first</li>
+        <li id="mylistitem">
+            <a href="">Google</a>
+        </li>
+        <li>third</li>
+    </ul>
+    <script>
+       const list =  document.getElementById("mylist");
+       const listitem =  document.getElementById("mylistitem");
+       console.log(listitem.parentNode);
+       console.log(listitem.parentElement);
+       console.log(listitem.children);
+       console.log(listitem.previousElementSibling);
+       console.log(listitem.nextElementSibling);
+
+       list.removeChild(listitem);
+
+
+
+
+
+    document.getElementById("mybtn").addEventListener("click",()=>{
+    alert(" Button Clicked ! ")
+    });
+    document.getElementById("myinput").addEventListener("keyup",(e)=>{
+    console.log("You typed: " , e.target.value);
+    });
+    </script>
+
+</div>
+
+
+
+
+</body>
+</html>
+ 

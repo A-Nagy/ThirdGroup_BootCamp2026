@@ -1,0 +1,61 @@
+
+/* تنسيق عناصر HTML5 الهيكلية */
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: #fdfdfd;
+    color: #222;
+    line-height: 1.8;
+    padding: 20px;
+    direction: ltr;
+}
+
+header, footer {
+    background-color: #00796b;
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+main {
+    padding: 20px;
+    text-align: left;
+}
+ul
+{
+    list-style-type: none;
+    display: flex;
+    background-color: #333;
+
+}
+
+nav a, nav ul li a {
+    display: block;
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    margin: 0 10px;
+}
+nav a:hover , nav ul li a:hover
+{
+    background-color: darkgreen;
+}
+
+section, article, aside {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 2px;
+    background-color: #fafafa;
+}
+form
+{
+    margin-top: 10px;
+    background-color: #222;
+    box-shadow: inset;
+}
+input[type="number"]
+{
+    padding: 5px;
+    margin: 10px;
+    width: 80px;
+
+}

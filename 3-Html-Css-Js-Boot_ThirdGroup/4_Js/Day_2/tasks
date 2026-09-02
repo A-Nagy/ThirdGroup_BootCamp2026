@@ -1,0 +1,26 @@
+Task 1 – Toggle a CSS Class**
+**Objective:** Create a button that toggles a class on an element.
+**Example:** Toggle `highlight` class on a paragraph to change its background color.
+```javascript
+document.getElementById("btn").addEventListener("click", () => {
+  document.getElementById("para").classList.toggle("highlight");
+});
+**Task 2 – Loop Through Student List and Show in Table**
+**Objective:** Use a loop to display a list of students with name and grade in an HTML table.
+**Example:**
+```javascript
+const students = [
+  { name: "Ali", grade: 90 },
+  { name: "Sara", grade: 85 },
+  { name: "Omar", grade: 78 }];
+
+### ✅ **Task 3 – Display Data from Array**  
+**Objective:** Use a local array of user objects (containing `name` and `email`) and display the data in an HTML table.
+
+**Example:**
+```javascript
+const users = [
+  { name: "Ali Ahmed", email: "ali@example.com" },
+  { name: "Sara Mostafa", email: "sara@example.com" },
+  { name: "Omar Khalid", email: "omar@example.com" }
+];

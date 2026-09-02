@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Code </title>
+</head>
+<body>
+    <script>
+     
+       // <!-- Enter The Day Number  1 - 5 = WorkDay   , 6 and 7 =  Week End , e Invalid -->
+      
+        //var salary =parseInt(prompt("Enter Your Salary"));
+        //var AnnualSlary = salary * 12 ;
+        //if(salary >12000)
+        //{
+        //document.write("<h1> High Salary</h1>");
+       // }
+        //else if(salary > 6000)
+        //{
+        //document.write("<h1> Normal Salary</h1>");
+        //}
+        //else if(salary >3000)
+        //{
+        //document.write("<h1> Low Salary</h1>");
+        //} 
+       // else
+        //{
+        //document.write("<h1>very Low Salary</h1>");
+       // }
+     
+    //var day = parseInt(prompt("Enter a  day number: "));
+
+    //if (day >= 1 && day <= 5) {
+    //    document.write("<h1>Work-day</h1>");
+    //}
+    //else if (day == 6 || day == 7) {
+    //    document.write("<h1>Off-day</h1>");
+    // }
+    // else
+    // {
+     //   document.write("<h1>Invalid day number!!</h1>");
+    // }
+        // take from Student 3 Marks and Print Avg  , max , min 
+        var m1 = parseFloat(prompt("Enter a mark "));
+        var m2 = parseFloat(prompt("Enter a mark "));
+        var m3 = parseFloat(prompt("Enter a mark "));
+       
+        var avg = (m1+m2+m3) / 3 ;
+
+        document.write("<h1> Avrage     : ",Math.round(avg)     , " </h1>");
+        document.write("<h1> Best mark  : ",Math.max(m1,m2,m3)  , " </h1>");
+        document.write("<h1> Worst Mark : ",Math.min(m1,m2,m3)  , " </h1>");
+
+    </script>
+</body>
+</html>

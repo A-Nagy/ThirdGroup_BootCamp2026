@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Fetch Users From Api</h2>
+    <button onclick="loadUsers()">load Users</button>
+    <table border="1" id="userstable">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>City</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+<script>
+  async function loadUsers()
+    {
+        const respone = await fetch('https://jsonplaceholder.typicode.com/users');
+        const users   = await respone.json();
+
+        const tbody = document.querySelector("#userstable tbody");
+        tbody.innerHTML = "" ; 
+        users.forEach(user => {
+            const row = document.createElement("tr");
+            row.innerHTML = `   <td>${user.name}</td>
+                                <td>${user.email}</td>
+                                <td>${user.address.city}</td>`; 
+             tbody.appendChild(row);                    
+            
+        });
+
+    }
+</script>
+
+</body>
+</html>

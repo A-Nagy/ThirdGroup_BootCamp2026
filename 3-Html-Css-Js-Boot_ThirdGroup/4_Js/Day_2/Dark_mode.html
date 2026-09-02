@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Darkmode</title>
+    <style>
+        body
+        {
+            font-family: Arial;
+            padding: 20px;
+        }
+        .dark-made{
+            background-color: black;
+            color: white;
+        }
+        .light-mode{
+            background-color: white;
+            color: black;
+        }
+        button{
+        padding: 10px;
+        border-radius: 10px;
+    }
+    </style>
+</head>
+<body class="light-mode">
+<h2>How To switch Between Dark and Light Mode ?</h2>
+    <button class="dark-made" onclick="setDarkMode()">Dark Mode</button>
+    <button onclick="setLightkMode()">Light Mode</button>
+    <script>
+        function setDarkMode()
+        {
+            document.body.classList.add("dark-made");
+            document.body.classList.remove("light-mode");
+        };
+        function setLightkMode()
+        {
+            document.body.classList.remove("dark-made");
+            document.body.classList. add("light-mode");
+        };
+    </script>
+
+</body>
+</html>

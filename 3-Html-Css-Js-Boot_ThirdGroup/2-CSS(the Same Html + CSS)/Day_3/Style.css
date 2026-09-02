@@ -1,0 +1,91 @@
+body{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #fff;
+    color: #333;
+    margin: 10px;
+    padding: 10px;
+    direction: rtl;
+}
+header , footer
+{
+    background-color: rgb(31, 100, 220);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+main
+{
+    padding: 20px;
+    text-align: center;
+}
+img , video , audio, iframe
+{
+    display: block;
+    margin-bottom: 20px;
+    max-width: 100%;
+    border: 2px solid #CCC;
+    border-radius: 8px;
+    box-shadow: 2px 2px 5px;
+}
+h1 , h2 , p 
+{
+    color: #382d2d;
+    margin-bottom: 10px;
+}
+section , article , aside
+{
+    width: 95%;
+    border: 2px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 8px;
+    direction: ltr;
+    box-shadow: 2px 2px 2px;
+}
+form{
+    font-family: 'Times New Roman', Times, serif;
+    background-color: #eef2f3;
+    direction: rtl;
+    padding: 40px;
+    margin: auto;
+    border: 1px solid  #b6b9ba;
+    border-radius: 20px;
+    box-shadow: 2px 2px 2px;
+}
+label
+{
+    display: block;
+    margin: 8px;
+    font-weight: bold;
+}
+input , textarea , select
+{
+    display: block;
+    width: 100%;
+    margin: 5px;
+    padding: 10px;
+    border: 2px #ccc ;
+    border-radius: 5px;
+    font-size: medium;
+}
+input:focus , textarea :focus, select:focus
+{
+    border: rgb(215, 8, 8);
+    outline: none;
+    background-color: #c4c8c9;
+}
+button
+{
+    background-color: rgb(77, 142, 239);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 18px;
+
+}
+button:hover
+{
+    background-color:  rgb(33, 88, 171);;
+}

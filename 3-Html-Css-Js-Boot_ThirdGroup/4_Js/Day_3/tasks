@@ -1,0 +1,17 @@
+### ✅ **Task 4 – Get Data from Public API**
+**Objective:** Use `fetch()` to get data from [https://fakestoreapi.com/products](https://fakestoreapi.com/products), and display each product (title, price, and image) inside a card layout in a section..
+
+
+Dynamic Menu Page with Category Filter`
+**Objective:** Display a dynamic food menu with the ability to filter items by category (e.g., Breakfast, Lunch, Shakes).
+
+**Skills Gained:**
+- Use of `array.filter()` or manual loops to show data based on user interaction
+- Template rendering with `replace`
+- Handling button clicks with `onclick`
+- Working with structured JavaScript objects
+
+**Files Used:**
+- `our-menu.html` – HTML structure for the menu page
+- `our-menu.css` – Styling for layout, cards, and filter buttons
+- `our-menu.js` – Script that loops over menu items and filters them dynamically

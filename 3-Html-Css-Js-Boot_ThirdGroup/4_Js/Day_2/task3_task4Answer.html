@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 3 ,4 </title>
+</head>
+<body>
+    <h2>Task 3 Greeting based on Time</h2>
+    <button onclick="greetBytime()">Greet ME </button>
+ 
+    <script>
+        function greetBytime()
+        {
+            const hour   = new Date().getHours();
+            let greeting = "" ; 
+            if(hour < 12)     {greeting = "Good Morning"  ;}
+            else if(hour < 18){greeting = "Good AfterNoon";}
+            else              {greeting = "Good Evening"  ;} 
+            document.getElementById("result").innerText=greeting + 'Hour now is : '+ hour;
+        }
+    </script>
+
+    <h2>Task 4 Greeting you based on Time</h2>
+    <label >Name : </label> <input type="text"   id="name" placeholder="Enter Your Name "><br>
+    <button onclick="greetmeBytime()">Greet ME </button>
+    <div id="result"></div>
+    <script>
+        function greetmeBytime()
+        {
+            const name   =  document.getElementById("name").value ;
+            const hour   = new Date().getHours();
+            let greeting = "" ; 
+            if(hour < 12)     {greeting = "Good Morning"  ;}
+            else if(hour < 18){greeting = "Good AfterNoon";}
+            else              {greeting = "Good Evening"  ;} 
+            document.getElementById("result").innerText=greeting + ', '+ name;
+        }
+    </script>
+
+</body>
+</html>

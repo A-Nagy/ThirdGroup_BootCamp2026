@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .highlight
+        {
+            background-color: yellow;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h2>Task 1 </h2>
+        <p id="para">Click The button To toggle Highlight</p>
+        <button id="btn"  >Toggle Highlight</button>
+    </div>
+    <script>
+        document.getElementById("btn").addEventListener("click",()=>{
+            document.getElementById("para").classList.toggle("highlight")
+        });
+        
+    </script>
+    <div>
+        <h2>Task 2 </h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Grade</th>
+                </tr>
+            </thead>
+            <tbody id="studenttable"></tbody>
+        </table>
+        <script>
+            const students = [
+                                { name: "Ali" , grade: 90 },
+                                { name: "Sara", grade: 85 },
+                                { name: "Omar", grade: 78 }
+                             ];
+            const tbody = document.getElementById("studenttable") ;
+            students.forEach(s =>
+            {
+                const row = document.createElement("tr");
+                row.innerHTML = `<td>${s.name}</td>
+                                 <td>${s.grade}</td>`;
+                tbody.appendChild(row)                
+            });
+        </script>
+        
+    </div>
+   <div>
+        <h2>Task 3</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                </tr>
+            </thead>
+            <tbody id="usertable"></tbody>
+        </table>
+        <script>
+            const users = [
+            { name: "Ali Ahmed"   , email: "ali@example.com" },
+            { name: "Sara Mostafa", email: "sara@example.com" },
+            { name: "Omar Khalid" , email: "omar@example.com" }
+            ];
+
+            const tablebody = document.getElementById("usertable") ;
+            users.forEach(x =>
+            {
+                const row2 = document.createElement("tr");
+                row2.innerHTML = `<td>${x.name}</td>
+                                 <td>${x.email}</td>`;
+                tablebody.appendChild(row2)                
+            });
+        </script>
+        
+    </div>
+</body>
+</html>
