@@ -1,0 +1,60 @@
+﻿@model Employee
+ 
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">إضافة موظف جديد</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Insert" method="post">
+                       
+                        <!-- Employee Name -->
+                        <div class="mb-3">
+                            <label  class="form-label">اسم الموظف <span class="text-danger">*</span></label>
+                            <input asp-for="EmployeeName" class="form-control" placeholder="أدخل اسم الموظف" />
+                         </div>
+
+                        <!-- Employee Email -->
+                        <div class="mb-3">
+                            <label  class="form-label">البريد الإلكتروني</label>
+                            <input asp-for="EmployeeEmail"  type="email" class="form-control" placeholder="example@domain.com" />
+                         </div>
+
+                        <!-- Employee Phone -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label  class="form-label">رقم الهاتف</label>
+                                <input asp-for="EmployeePhone" class="form-control" maxlength="11" placeholder="01xxxxxxxxx" />
+                             </div>
+
+                            <!-- Employee Age -->
+                            <div class="col-md-6 mb-3">
+                                <label   class="form-label">السن</label>
+                                <input asp-for="EmployeeAge"  type="number" class="form-control" min="18" max="100" placeholder="مثال: 30" />
+                             </div>
+                        </div>
+
+                        <!-- Employee Salary -->
+                        <div class="mb-3">
+                            <label   class="form-label">الراتب <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input asp-for="EmployeeSalary" type="number" step="0.01" class="form-control" placeholder="بين 3000 و 10000" />
+                                <span class="input-group-text">ج.م</span>
+                            </div>
+                         </div>
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-success px-4"> حفظ</button>
+                            <a asp-action="Index" class="btn btn-secondary">الرجوع للقائمة</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+ 
+                       
