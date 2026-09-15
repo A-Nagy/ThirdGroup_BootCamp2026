@@ -1,0 +1,38 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Update Category";
+}
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">تحديث بيانات الصنف</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="Update" method="post">
+                        <input type="hidden" asp-for="Id" />
+                        <div class="mb-3">
+                            <label class="form-label">اسم الصنف <span class="text-danger">*</span></label>
+                            <input asp-for="Name" class="form-control" placeholder="أدخل اسم الصنف" />
+                        </div>
+
+                        <!-- Employee Email -->
+                        <div class="mb-3">
+                            <label class="form-label">وصف الصنف</label>
+                            <input asp-for="Description" type="text" class="form-control"   />
+                        </div>
+ 
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <button type="submit" class="btn btn-warning px-4"> تحديث</button>
+                            <a asp-action="Index" class="btn btn-secondary">الرجوع للقائمة</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

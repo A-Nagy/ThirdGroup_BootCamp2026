@@ -20,5 +20,10 @@ namespace ThirdGroup_1.Models
         // This attribute specifies that the property is required and must fall within the specified range.
         public decimal EmployeeSalary { get; set; }
 
+        public int? DepartmentId { get; set; }
+       
+        //Navigation Property 
+        public Department? Department { get; set; }
+
     }
 }

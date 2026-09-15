@@ -1,26 +1,64 @@
-﻿@model List<Employee>
-@{  
-    ViewData["Title"] = "Employees Details";
+﻿@model Employee
+@{
+    ViewData["Title"] = "Employee Details";
 }
-<h1>Employees Details</h1>
-<table class="table table-bordered">
-    <thead>
-        <tr>
-            <th>Id</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Salary</th>
-        </tr>
-    </thead>
-    <tbody>
-      @*   @foreach (var employee in Model) *@
-   @*  {
-        <tr>
-            <td>@employee.EmployeeId</td>
-            <td>@employee.EmployeeName</td>
-            <td>@employee.EmployeeEmail</td>
-            <td>@employee.EmployeeSalary</td>
-        </tr>
-     } *@
-    </tbody>
-</table>
+
+<div class="container mt-4">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <div class="card shadow-sm">
+                <div class="card-header bg-primary text-white">
+                    <h4 class="mb-0">بيانات الموظف</h4>
+                </div>
+                <div class="card-body">
+                    <form asp-action="/" method="post">
+
+                        <input type="hidden" asp-for="EmployeeId" />
+                        <!-- Employee Name -->
+                        <div class="mb-3">
+                            <label class="form-label">اسم الموظف <span class="text-danger">*</span></label>
+                            <input asp-for="EmployeeName" class="form-control" placeholder="أدخل اسم الموظف" disabled/>
+                        </div>
+
+                        <!-- Employee Email -->
+                        <div class="mb-3">
+                            <label class="form-label">البريد الإلكتروني</label>
+                            <input asp-for="EmployeeEmail" type="email" class="form-control" placeholder="example@domain.com" disabled />
+                        </div>
+
+                        <!-- Employee Phone -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">رقم الهاتف</label>
+                                <input asp-for="EmployeePhone" class="form-control" maxlength="11" placeholder="01xxxxxxxxx" disabled />
+                            </div>
+
+                            <!-- Employee Age -->
+                            <div class="col-md-6 mb-3">
+                                <label class="form-label">السن</label>
+                                <input asp-for="EmployeeAge" type="number" class="form-control" min="18" max="100" placeholder="مثال: 30" disabled />
+                            </div>
+                        </div>
+
+                        <!-- Employee Salary -->
+                        <div class="mb-3">
+                            <label class="form-label">الراتب <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <input asp-for="EmployeeSalary" type="number" step="0.01" class="form-control" placeholder="بين 3000 و 10000" disabled />
+                                <span class="input-group-text">ج.م</span>
+                            </div>
+                        </div>
+                        <!-- Buttons -->
+                        <div class="d-flex justify-content-between mt-4">
+                            <a asp-action="Index"  class="btn btn-primary"  >الرجوع لقائمة الموظفين</a>
+                            <a asp-action="Update" class="btn btn-warning" asp-route-Id="@Model.EmployeeId" >تحديث بيانات الموظف</a>
+                            <a asp-action="Delete" class="btn btn-danger" asp-route-Id="@Model.EmployeeId">حذف الموظف</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

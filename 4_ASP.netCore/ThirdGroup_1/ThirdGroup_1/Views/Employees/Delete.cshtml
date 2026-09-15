@@ -1,0 +1,16 @@
+﻿@model Employee
+@{
+    ViewData["Title"] = "Delete Employee";
+}
+<h1 class="text-center mt-4">حذف موظف</h1>
+
+<h2>اسم الموظف : @Model.EmployeeName </h2>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="EmployeeId" />
+    <button type="submit" class="btn btn-danger"
+    onclick="return confirm('سوف يتم حذف هذا الموظف نهائيا !\n هل انت متاكد من ذلك ؟')">
+    حـــذف</button>
+    <a asp-action="Index" class="btn btn-secondary">الرجوع للقائمة</a>
+
+</form>

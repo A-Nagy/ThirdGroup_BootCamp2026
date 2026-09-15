@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
 
@@ -32,13 +34,14 @@ namespace ThirdGroup_1.Controllers
             //employee.EmployeeSalary = 5000.00m;
             //return View(employee);
 
-            List<Employee> empdata = _context.Employees.ToList();
+            IEnumerable<Employee> empdata = 
+                _context.Employees.Include(e=>e.Department).ToList();
 
             return View(empdata); 
         }
-        public IActionResult Details() 
+        [HttpGet]
+        public IActionResult Details(int Id) 
         {
-
             //List<Employee> employees = new List<Employee>();
 
             //Employee employee1 = new Employee
@@ -67,8 +70,9 @@ namespace ThirdGroup_1.Controllers
             //employees.Add(employee3);
 
             //return View(employees);
+            Employee? employee = _context.Employees.Find(Id);
 
-            return View();
+            return View(employee);
         }
 
         [HttpGet]
@@ -77,13 +81,75 @@ namespace ThirdGroup_1.Controllers
             return View(); 
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult Insert(Employee employee)
         {
-            _context.Employees.Add(employee);
+            if(ModelState.IsValid)
+            {
+                _context.Employees.Add(employee);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+              return View(employee);
+
+        }
+        [HttpGet]
+        public IActionResult Update(int Id) 
+        {
+            Employee? employee = _context.Employees.Find(Id);
+            if (employee == null) 
+            {
+            return NotFound();//like 404 error
+            }
+            return View(employee);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Update(Employee employee)
+        {  if (ModelState.IsValid)
+            {
+                _context.Employees.Update(employee);
+                _context.SaveChanges();
+                return RedirectToAction("Index");
+            }
+              return View(employee);
+           
+        }
+        [HttpGet]
+        public IActionResult Delete(int Id)
+        {
+            Employee? employee = _context.Employees.Find(Id);
+            if (employee == null)
+            {
+                return NotFound();//like 404 error
+            }
+            return View(employee);
+        }
+        [HttpPost]
+        public IActionResult Delete(Employee employee)
+        { 
+            _context.Employees.Remove(employee);
             _context.SaveChanges();
             return RedirectToAction("Index");
-        }
 
+        }
+        [HttpGet]
+        public IActionResult Search() 
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Search(string name)
+        {
+            if (name.IsNullOrEmpty()) 
+            {
+                return NotFound();
+            }
+            Employee? emp = _context.Employees.FirstOrDefault(d=> name == d.EmployeeName);
+
+            return RedirectToAction("Details", new { id = emp.EmployeeId });
+            //return RedirectToAction("Details", emp.EmployeeId);
+        }
 
     }
 }

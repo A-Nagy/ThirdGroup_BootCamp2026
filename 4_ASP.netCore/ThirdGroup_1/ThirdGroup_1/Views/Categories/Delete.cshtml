@@ -1,0 +1,17 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Delete Category";
+}
+<h1 class="text-center mt-4">حذف الصنف</h1>
+
+<h2>اسم الصنف : @Model.Name </h2>
+
+<form asp-action="Delete" method="post">
+    <input type="hidden" asp-for="Id" />
+    <button type="submit" class="btn btn-danger"
+            onclick="return confirm('سوف يتم حذف هذا الصنف نهائيا !\n هل انت متاكد من ذلك ؟')">
+        حـــذف
+    </button>
+    <a asp-action="Index" class="btn btn-secondary">الرجوع للقائمة</a>
+
+</form>

@@ -1,0 +1,16 @@
+﻿@model Category
+@{
+    ViewData["Title"] = "Search About Category";
+}
+<h1 class="text-center">@ViewData["Title"]</h1>
+
+<form asp-action="Search" method="post">
+    <div>
+        <label class="form-label">Name</label>
+        <input class="form-control" type="text" id="name", name="name"/>
+    </div>
+ <button type="submit" class="btn btn-outline-danger">Search</button>
+    <a asp-action="Index" class="btn btn-secondary">الرجوع للقائمة</a>
+
+ </form>
+
