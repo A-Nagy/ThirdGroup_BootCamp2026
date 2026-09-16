@@ -14,5 +14,8 @@ namespace ThirdGroup_1.Data
         public DbSet<Category> Categories { get; set; }
         public DbSet<Department> Department { get; set; }
         public DbSet<Product> Product { get; set; } 
+        public DbSet<User> Users { get; set; }
+        public DbSet<Permission> Permissions { get; set; }
+        public DbSet<Role> Roles { get;set; }
     }
 }

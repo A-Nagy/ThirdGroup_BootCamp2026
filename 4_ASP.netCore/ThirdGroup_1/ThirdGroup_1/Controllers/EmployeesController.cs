@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ThirdGroup_1.Data;
@@ -70,6 +71,7 @@ namespace ThirdGroup_1.Controllers
             //employees.Add(employee3);
 
             //return View(employees);
+            LoadDepartments();
             Employee? employee = _context.Employees.Find(Id);
 
             return View(employee);
@@ -78,6 +80,7 @@ namespace ThirdGroup_1.Controllers
         [HttpGet]
         public IActionResult Insert() 
         {
+            LoadDepartments();
             return View(); 
         }
         [HttpPost]
@@ -90,17 +93,20 @@ namespace ThirdGroup_1.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
+          //    LoadDepartments();
               return View(employee);
 
         }
         [HttpGet]
         public IActionResult Update(int Id) 
         {
+           
             Employee? employee = _context.Employees.Find(Id);
             if (employee == null) 
             {
             return NotFound();//like 404 error
             }
+            LoadDepartments();
             return View(employee);
         }
         [HttpPost]
@@ -112,7 +118,8 @@ namespace ThirdGroup_1.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-              return View(employee);
+           // LoadDepartments();
+            return View(employee);
            
         }
         [HttpGet]
@@ -149,6 +156,12 @@ namespace ThirdGroup_1.Controllers
 
             return RedirectToAction("Details", new { id = emp.EmployeeId });
             //return RedirectToAction("Details", emp.EmployeeId);
+        }
+
+        private void LoadDepartments() 
+        {
+            IEnumerable<Department> departments= _context.Department.ToList();
+            ViewBag.Departments = new SelectList(departments, "Id", "Name");
         }
 
     }
