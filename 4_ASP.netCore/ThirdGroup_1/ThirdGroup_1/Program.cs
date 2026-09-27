@@ -1,5 +1,8 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using ThirdGroup_1.Data;
+using ThirdGroup_1.Models;
+using ThirdGroup_1.Security;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,7 +11,26 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-
+//Cookie Authenticantion
+builder.Services.AddAuthentication
+           (CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options=>
+           {
+               options.LoginPath = "/Account/Login";
+               options.AccessDeniedPath = "/";
+               options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
+               options.SlidingExpiration = true;
+               options.Cookie.Name = "SystemManagement.Auth";
+               options.Cookie.HttpOnly=true;
+           });
+//Permission Policies
+builder.Services.AddAuthorization(options => 
+{
+    foreach (string permission in PermissionsNames.All) 
+    {
+     options.AddPolicy(
+            permission, policy => policy.RequireClaim(PermissionsNames.ClaimType, permission));
+    }
+});
 
 var app = builder.Build();
 
@@ -26,10 +48,13 @@ app.UseStaticFiles();
 
 app.UseRouting();
 
+app.UseAuthentication();   
+
 app.UseAuthorization();
+ 
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Employees}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

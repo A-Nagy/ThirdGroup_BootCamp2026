@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
 
 namespace ThirdGroup_1.Controllers
 {
+    [Authorize]
     public class CategoriesController : Controller
     {
 

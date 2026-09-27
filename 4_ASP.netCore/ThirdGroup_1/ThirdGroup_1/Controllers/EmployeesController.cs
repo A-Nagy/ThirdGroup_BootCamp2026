@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
@@ -7,6 +8,7 @@ using ThirdGroup_1.Models;
 
 namespace ThirdGroup_1.Controllers
 {
+    [Authorize]
     public class EmployeesController : Controller
     {
         private readonly AppDbContext _context ;
@@ -16,6 +18,7 @@ namespace ThirdGroup_1.Controllers
             _context = context; 
         }
 
+    
         [HttpGet]
         public IActionResult Index()
         {
@@ -36,7 +39,7 @@ namespace ThirdGroup_1.Controllers
             //return View(employee);
 
             IEnumerable<Employee> empdata = 
-                _context.Employees.Include(e=>e.Department).ToList();
+                _context.Employees.Include(e =>e.Department).ToList();
 
             return View(empdata); 
         }
@@ -71,8 +74,7 @@ namespace ThirdGroup_1.Controllers
             //employees.Add(employee3);
 
             //return View(employees);
-            LoadDepartments();
-            Employee? employee = _context.Employees.Find(Id);
+             Employee? employee = _context.Employees.Find(Id);
 
             return View(employee);
         }
@@ -80,7 +82,8 @@ namespace ThirdGroup_1.Controllers
         [HttpGet]
         public IActionResult Insert() 
         {
-            LoadDepartments();
+
+            LoadDepartents();
             return View(); 
         }
         [HttpPost]
@@ -93,8 +96,8 @@ namespace ThirdGroup_1.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-          //    LoadDepartments();
-              return View(employee);
+            LoadDepartents();
+            return View(employee);
 
         }
         [HttpGet]
@@ -106,7 +109,7 @@ namespace ThirdGroup_1.Controllers
             {
             return NotFound();//like 404 error
             }
-            LoadDepartments();
+            LoadDepartents();
             return View(employee);
         }
         [HttpPost]
@@ -118,7 +121,7 @@ namespace ThirdGroup_1.Controllers
                 _context.SaveChanges();
                 return RedirectToAction("Index");
             }
-           // LoadDepartments();
+            LoadDepartents();
             return View(employee);
            
         }
@@ -157,10 +160,9 @@ namespace ThirdGroup_1.Controllers
             return RedirectToAction("Details", new { id = emp.EmployeeId });
             //return RedirectToAction("Details", emp.EmployeeId);
         }
-
-        private void LoadDepartments() 
+        public void LoadDepartents() 
         {
-            IEnumerable<Department> departments= _context.Department.ToList();
+            List<Department> departments = _context.Department.ToList();
             ViewBag.Departments = new SelectList(departments, "Id", "Name");
         }
 

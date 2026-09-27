@@ -1,0 +1,22 @@
+﻿@model User
+@{
+    Layout = "_LayoutLogin";
+    ViewData["Title"] = "Login";
+    string? returnUrl = ViewBag.ReturnUrl;
+}
+
+<h1>Login</h1>
+<form asp-action="Login" method="post">
+    <input type="hidden" value="@returnUrl" name="returnUrl" id="returnUrl" />
+    <div class="mb-2">
+        <label>User Name</label>
+        <input asp-for="@Model.Name" type="text" id="username" name="username" />
+    </div>
+    <div class="mb-2">
+        <label>Password</label>
+        <input asp-for="@Model.Password" type="password" id="password" name="password" />
+    </div>
+    <button type="submit">Login</button>
+</form>
+
+

@@ -155,9 +155,9 @@ namespace ThirdGroup_1.Controllers
         }
 
         [HttpGet]
-        public IActionResult AssignPermissions(int Roleid) 
+        public IActionResult AssignPermissions(int Id) 
         {
-          Role? role = _context.Roles.Include(r=>r.Permissions).FirstOrDefault(r=>r.Id == Roleid);
+          Role? role = _context.Roles.Include(r=>r.Permissions).FirstOrDefault(r=>r.Id == Id);
             if (role == null) 
             {
                 return NotFound();
@@ -168,9 +168,31 @@ namespace ThirdGroup_1.Controllers
 
             ViewBag.AssignedPermissionsList = role.Permissions.Select(p=>p.Id).ToList();
           
-            return View(role);
+            return View(role);   
+        }
+        [HttpPost]
+        public IActionResult AssignPermissions(int Id,List<int> permissionIds) 
+        {
+            Role? role = _context.Roles.Include(r => r.Permissions).FirstOrDefault(r => r.Id == Id);
+            if (role == null)
+            {
+                return NotFound();
+            }
+            role.Permissions.Clear();
+
+          List<Permission> selectedpremission =
+                _context.Permissions.Where(p => permissionIds.Contains(p.Id)).ToList();
+
+            foreach (Permission p in selectedpremission) 
+            {
+                role.Permissions.Add(p);
+            }
+            _context.SaveChanges();
+            return RedirectToAction("Index");
+
         }
 
-        [HttpPost]
+
+
     }
 }

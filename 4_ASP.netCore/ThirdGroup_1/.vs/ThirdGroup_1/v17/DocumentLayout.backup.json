@@ -3,20 +3,28 @@
   "WorkspaceRootPath": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\views\\roles\\assignpermissions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\views\\roles\\assignpermissions.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\models\\permission.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\controllers\\rolescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\controllers\\permissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\controllers\\permissionscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\models\\viewmodels\\loginviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\views\\account\\accessdenied.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|h:\\bootcamp\\3-thirdgroup_bootcamp2026\\4_asp.netcore\\thirdgroup_1\\thirdgroup_1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{3FC1F2F2-510A-47D8-B0D0-CEF761E8756F}|ThirdGroup_1\\ThirdGroup_1.csproj|solutionrelative:thirdgroup_1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +34,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 245,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,54 +42,80 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Permission.cs",
-              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Models\\Permission.cs",
-              "RelativeDocumentMoniker": "ThirdGroup_1\\Models\\Permission.cs",
-              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Models\\Permission.cs",
-              "RelativeToolTip": "ThirdGroup_1\\Models\\Permission.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T15:50:48.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "AssignPermissions.cshtml",
-              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Roles\\AssignPermissions.cshtml",
-              "RelativeDocumentMoniker": "ThirdGroup_1\\Views\\Roles\\AssignPermissions.cshtml",
-              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Roles\\AssignPermissions.cshtml",
-              "RelativeToolTip": "ThirdGroup_1\\Views\\Roles\\AssignPermissions.cshtml",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABoAAAAUAAAAAAAAAA==",
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "ThirdGroup_1\\Views\\Account\\Login.cshtml",
+              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "ThirdGroup_1\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAYAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2026-09-16T15:32:35.791Z",
+              "WhenOpened": "2026-09-27T15:33:31.434Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "RolesController.cs",
-              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Controllers\\RolesController.cs",
-              "RelativeDocumentMoniker": "ThirdGroup_1\\Controllers\\RolesController.cs",
-              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Controllers\\RolesController.cs",
-              "RelativeToolTip": "ThirdGroup_1\\Controllers\\RolesController.cs",
-              "ViewState": "AgIAAJcAAAAAAAAAAAAuwKUAAAAjAAAAAAAAAA==",
+              "Title": "Program.cs",
+              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Program.cs",
+              "RelativeDocumentMoniker": "ThirdGroup_1\\Program.cs",
+              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Program.cs",
+              "RelativeToolTip": "ThirdGroup_1\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T15:14:26.415Z",
+              "WhenOpened": "2026-09-27T15:17:20.34Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AccessDenied.cshtml",
+              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeDocumentMoniker": "ThirdGroup_1\\Views\\Account\\AccessDenied.cshtml",
+              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Account\\AccessDenied.cshtml",
+              "RelativeToolTip": "ThirdGroup_1\\Views\\Account\\AccessDenied.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-27T15:07:55.957Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "ThirdGroup_1\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "ThirdGroup_1\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAADIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-09-27T14:53:34.653Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PermissionsController.cs",
-              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Controllers\\PermissionsController.cs",
-              "RelativeDocumentMoniker": "ThirdGroup_1\\Controllers\\PermissionsController.cs",
-              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Controllers\\PermissionsController.cs",
-              "RelativeToolTip": "ThirdGroup_1\\Controllers\\PermissionsController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Title": "LoginViewModel.cs",
+              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeDocumentMoniker": "ThirdGroup_1\\Models\\ViewModels\\LoginViewModel.cs",
+              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Models\\ViewModels\\LoginViewModel.cs",
+              "RelativeToolTip": "ThirdGroup_1\\Models\\ViewModels\\LoginViewModel.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAUwAwAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-09-16T15:13:46.897Z",
+              "WhenOpened": "2026-09-27T13:36:49.826Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "ThirdGroup_1\\Controllers\\AccountController.cs",
+              "ToolTip": "H:\\Bootcamp\\3-ThirdGroup_BootCamp2026\\4_ASP.netCore\\ThirdGroup_1\\ThirdGroup_1\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "ThirdGroup_1\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAAEwCkAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-09-27T13:35:25.393Z",
               "EditorCaption": ""
             }
           ]

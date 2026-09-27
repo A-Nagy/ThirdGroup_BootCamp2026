@@ -4,22 +4,21 @@
    //  var allpermissions = ViewBag.Permissionslist as List<Permission>;
     List<Permission> allpermissions = ViewBag.Permissionslist;
 
-    var assignedids = ViewBag.AssignedPermissionsList as List<int> ;
+    List<int> assignedids = ViewBag.AssignedPermissionsList;
 }
 
 <h1>@ViewData["Title"]</h1>
 <h2>@Model.Name Permissions</h2>
 
 <form asp-action="AssignPermissions" method="post">
-    <input  type="hidden" name="roleId" value="@Model.Id" />
-
+    <input type="hidden" name="Id" value="@Model.Id" />
 
     @foreach (var permission in allpermissions!)
     {
         <div class="form-check mb-2">
             <input class="form-check-input"
                    type="checkbox"
-                   name="permissionId"
+                   name="permissionIds"
                    value="@permission.Id"
                    checked="@(assignedids!.Contains(permission.Id))" />
             <label class="form-check-label">
