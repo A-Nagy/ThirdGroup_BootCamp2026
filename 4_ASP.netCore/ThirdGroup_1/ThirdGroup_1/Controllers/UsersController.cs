@@ -1,40 +1,50 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.EntityFrameworkCore;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
+using ThirdGroup_1.Repositories.Base;
+using ThirdGroup_1.Repositories.Roles;
+using ThirdGroup_1.Repositories.Users;
 
 namespace ThirdGroup_1.Controllers
 {
     public class UsersController : Controller
     {
-        private readonly AppDbContext _context;
+        //private readonly AppDbContext _context;
+        //private readonly IUserRepository _user;
+        //private readonly IRoleRepository _role; 
+        private readonly IUnitOfWork _unitOfWork;
 
-        public UsersController(AppDbContext context)
+
+        public UsersController(IUnitOfWork unitOfWork)
         {
-            _context = context;
+            ////_context = context;
+            //_user = repository;
+            //_role = role;
+            _unitOfWork = unitOfWork;
         }
 
         // GET: Users
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Users.ToListAsync());
+            return View(_unitOfWork.Users.GetAll());
         }
 
         // GET: Users/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(int id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var user = _unitOfWork.Users.GetById(id); 
+                
             if (user == null)
             {
                 return NotFound();
@@ -58,8 +68,9 @@ namespace ThirdGroup_1.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(user);
-                await _context.SaveChangesAsync();
+                _unitOfWork.Users.Create(user);
+                _unitOfWork.Save();
+                //await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
             return View(user);
@@ -72,8 +83,8 @@ namespace ThirdGroup_1.Controllers
             {
                 return NotFound();
             }
-
-            var user = await _context.Users.FindAsync(id);
+//await _context.Users.FindAsync(id);
+            var user = _unitOfWork.Users.GetById(id.Value);
             if (user == null)
             {
                 return NotFound();
@@ -97,19 +108,14 @@ namespace ThirdGroup_1.Controllers
             {
                 try
                 {
-                    _context.Update(user);
-                    await _context.SaveChangesAsync();
+                    //_context.Update(user);
+                    //await _context.SaveChangesAsync();
+                    _unitOfWork.Users.Update(user);
+                    _unitOfWork.Save();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UserExists(user.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
+                    ;
                 }
                 return RedirectToAction(nameof(Index));
             }
@@ -123,9 +129,9 @@ namespace ThirdGroup_1.Controllers
             {
                 return NotFound();
             }
-
-            var user = await _context.Users
-                .FirstOrDefaultAsync(m => m.Id == id);
+ //await _context.UsersFirstOrDefaultAsync(m => m.Id == id);
+            var user =_unitOfWork.Users.GetById(id.Value);
+             
             if (user == null)
             {
                 return NotFound();
@@ -139,30 +145,34 @@ namespace ThirdGroup_1.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var user = await _context.Users.FindAsync(id);
-            if (user != null)
-            {
-                _context.Users.Remove(user);
-            }
+            /*await _context.Users.FindAsync(id);*/
+           
+            var user = _unitOfWork.Users.GetById(id);         
+            
+            _unitOfWork.Users.Delete(user);
+            _unitOfWork.Save();
 
-            await _context.SaveChangesAsync();
+            //await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UserExists(int id)
-        {
-            return _context.Users.Any(e => e.Id == id);
-        }
+        //private bool UserExists(int id)
+        //{
+        //    return _context.Users.Any(e => e.Id == id);
+        //}
         [HttpGet]
         public IActionResult AssignRole(int Id)
-        {
-            User? user = _context.Users.Include(u => u.Roles).FirstOrDefault(u => u.Id == Id);
+        {/*_context.Users.Include(u => u.Roles).FirstOrDefault(u => u.Id == Id);*/
+            User? user = _unitOfWork.Users.GetUserWithRole(Id);
             if (user == null)
             {
                 return NotFound();
             }
 
-            List<Role> roles = _context.Roles.ToList();
+            /*_context.Roles.ToList();*/
+            
+            IEnumerable<Role> roles = _unitOfWork.Roles.GetAll();
+
             ViewBag.Roleslist = roles;
 
             ViewBag.AssignedRolesList = user.Roles.Select(r => r.Id).ToList();
@@ -172,21 +182,27 @@ namespace ThirdGroup_1.Controllers
         [HttpPost]
         public IActionResult AssignRole(int Id, List<int> roleIds)
         {
-            User? user = _context.Users.Include(u => u.Roles).FirstOrDefault(u => u.Id == Id);
+            /*_context.Users.Include(u => u.Roles).FirstOrDefault(u => u.Id == Id);*/
+
+            User? user = _unitOfWork.Users.GetUserWithRole(Id);
             if (user == null)
             {
                 return NotFound();
             }
-            user.Roles.Clear();
 
-            List<Role> selectedRoles =
-                  _context.Roles.Where(r => roleIds.Contains(r.Id)).ToList();
+            user.Roles.Clear();
+            //_context.Roles.Where(r => roleIds.Contains(r.Id)).ToList();
+
+            IEnumerable<Role> selectedRoles = _unitOfWork.Roles.GetSpecificUserRoles(roleIds);
 
             foreach (Role r in selectedRoles)
             {
                 user.Roles.Add(r);
             }
-            _context.SaveChanges();
+
+             _unitOfWork.Users.Update(user);
+            _unitOfWork.Save();
+
             return RedirectToAction("Index");
 
         }

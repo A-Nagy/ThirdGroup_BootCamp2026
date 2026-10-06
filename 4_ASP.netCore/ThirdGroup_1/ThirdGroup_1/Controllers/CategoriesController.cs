@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
+using ThirdGroup_1.Repositories.Base;
 
 namespace ThirdGroup_1.Controllers
 {
@@ -11,18 +12,20 @@ namespace ThirdGroup_1.Controllers
     {
 
         private readonly AppDbContext _context;
+        private readonly IRepository<Category> _repository;
 
-        public CategoriesController(AppDbContext context)
+        public CategoriesController(AppDbContext context , IRepository<Category> repository)
         {
             _context = context;
+            _repository = repository;
         }
 
         [HttpGet]
         public IActionResult Index()
         { 
-            List<Category> catdata = _context.Categories.ToList();
+           // List<Category> catdata = _context.Categories.ToList();
 
-            return View(catdata);
+            return View(_repository.GetAll());
         }
         [HttpGet]
         public IActionResult Details(int Id)

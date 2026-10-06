@@ -1,29 +1,41 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
+using ThirdGroup_1.Repositories.Base;
 
 namespace ThirdGroup_1.Controllers
 {
+    [Authorize]
     public class DepartmentsController : Controller
     {
         private readonly AppDbContext _context;
+        private readonly IRepository<Department> _repository;
 
-        public DepartmentsController(AppDbContext context)
+        public DepartmentsController(AppDbContext context , IRepository<Department> repository)
         {
             _context = context;
+            _repository = repository;
         }
 
         // GET: Departments
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            return View(await _context.Department.ToListAsync());
+            var departments = _context.Department.ToList(); 
+            return Ok(departments);
         }
+        //content : text
+        //view : Interface 
+        //Not Found : Error For Interfcae
+        //Ok : Data in Josn For "Api"
+        //Bad Request : Error With responce for Api
+
 
         // GET: Departments/Details/5
         public async Task<IActionResult> Details(int? id)

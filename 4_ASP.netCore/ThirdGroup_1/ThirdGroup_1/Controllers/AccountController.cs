@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authentication;
+﻿
+using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
@@ -104,7 +105,8 @@ namespace ThirdGroup_1.Controllers
 
             if (returnUrl == null)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Dashboard");
+
 
             }
             else 

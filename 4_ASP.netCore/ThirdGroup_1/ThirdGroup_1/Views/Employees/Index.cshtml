@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Employee>
+﻿@using ThirdGroup_1.Security
+@model IEnumerable<Employee>
 @{
     ViewData["Title"] = "Employee Page";
 }
@@ -28,12 +29,25 @@
             <td>@emp.EmployeeSalary</td>
             <td>@emp.Department?.Name</td>
             <td>
+                @if (User.HasClaim("Permission", PermissionsNames.EmployeesEdit))
+                {
+                 <a class="btn btn-warning" asp-controller="Employees" asp-action="update" asp-route-id="@emp.EmployeeId">Update</a>
+
+                }
+                @if (User.HasClaim("Permission", PermissionsNames.EmployeesDelete))
+                {
                 <a class="btn btn-secondary" asp-controller="Employees" asp-action="Details" asp-route-id="@emp.EmployeeId">Details</a>
-                <a class="btn btn-warning" asp-controller="Employees" asp-action="update" asp-route-id="@emp.EmployeeId">Update</a>
+              
                 <a class="btn btn-danger" asp-controller="Employees" asp-action="delete" asp-route-id="@emp.EmployeeId">Delete</a>
+                }
             </td>
         </tr>
     }
 </table>
-<a class="btn btn-success" asp-controller="Employees" asp-action="insert">Add Employee</a>
+@if (User.HasClaim("Permission", PermissionsNames.EmployeesCreate))
+{
+    <a class="btn btn-success" asp-controller="Employees" asp-action="insert">Add Employee</a>
+
+}
+ 
 <a class="btn btn-primary" asp-controller="Employees" asp-action="Search">Search</a>

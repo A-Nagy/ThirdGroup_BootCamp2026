@@ -5,20 +5,31 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
+using ThirdGroup_1.Repositories.Base;
+using ThirdGroup_1.Repositories.EmployeeRepository;
+using ThirdGroup_1.Security;
 
 namespace ThirdGroup_1.Controllers
 {
     [Authorize]
     public class EmployeesController : Controller
     {
-        private readonly AppDbContext _context ;
 
-        public EmployeesController(AppDbContext context)
+      //private readonly AppDbContext _context ;
+      //private readonly IRepository<Department> _Deptrepo;
+     // private readonly IRepository<Employee> _repository;
+     // private readonly IEmployeeRepository _employeeRepository ;
+     private readonly IUnitOfWork _unitOfWork;
+        public EmployeesController(IUnitOfWork unitOfWork)
         {
-            _context = context; 
+         //   _context = context; 
+         //   _employeeRepository = employeeRepository;
+         //   _Deptrepo = Deptrepo;
+
+            _unitOfWork = unitOfWork;
         }
 
-    
+        [Authorize(Policy =PermissionsNames.EmployeesView)]
         [HttpGet]
         public IActionResult Index()
         {
@@ -38,11 +49,13 @@ namespace ThirdGroup_1.Controllers
             //employee.EmployeeSalary = 5000.00m;
             //return View(employee);
 
-            IEnumerable<Employee> empdata = 
-                _context.Employees.Include(e =>e.Department).ToList();
+            //IEnumerable<Employee> empdata = _context.Employees.Include(e =>e.Department).ToList();
+            var empdate = _unitOfWork.Employees.GetAllWithDepartments();
 
-            return View(empdata); 
+            return View(empdate); 
         }
+         
+
         [HttpGet]
         public IActionResult Details(int Id) 
         {
@@ -74,10 +87,13 @@ namespace ThirdGroup_1.Controllers
             //employees.Add(employee3);
 
             //return View(employees);
-             Employee? employee = _context.Employees.Find(Id);
+             //Employee? employee = _context.Employees.Find(Id);
+            
+            return View(_unitOfWork.Employees.GetById(Id));
 
-            return View(employee);
         }
+
+        [Authorize(Policy = PermissionsNames.EmployeesCreate)]
 
         [HttpGet]
         public IActionResult Insert() 
@@ -86,60 +102,75 @@ namespace ThirdGroup_1.Controllers
             LoadDepartents();
             return View(); 
         }
+
+        [Authorize(Policy = PermissionsNames.EmployeesCreate)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Insert(Employee employee)
         {
             if(ModelState.IsValid)
             {
-                _context.Employees.Add(employee);
-                _context.SaveChanges();
+                //_context.Employees.Add(employee);
+                //_context.SaveChanges();
+                _unitOfWork.Employees.Create(employee);
+                _unitOfWork.Save();
                 return RedirectToAction("Index");
             }
-            LoadDepartents();
+          LoadDepartents();
             return View(employee);
 
         }
+
+        [Authorize(Policy =PermissionsNames.EmployeesEdit)]
         [HttpGet]
         public IActionResult Update(int Id) 
         {
-           
-            Employee? employee = _context.Employees.Find(Id);
+            Employee? employee = _unitOfWork.Employees.GetById(Id);
+            // _context.Employees.Find(Id);
             if (employee == null) 
             {
-            return NotFound();//like 404 error
+              return NotFound();//like 404 error
             }
             LoadDepartents();
             return View(employee);
         }
+        [Authorize(Policy = PermissionsNames.EmployeesEdit)]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Update(Employee employee)
         {  if (ModelState.IsValid)
             {
-                _context.Employees.Update(employee);
-                _context.SaveChanges();
+                //_context.Employees.Update(employee);
+                //_context.SaveChanges();
+                _unitOfWork.Employees.Update(employee);
+                _unitOfWork.Save();
                 return RedirectToAction("Index");
             }
             LoadDepartents();
             return View(employee);
            
         }
+
+        [Authorize(Policy = PermissionsNames.EmployeesDelete)]
         [HttpGet]
         public IActionResult Delete(int Id)
         {
-            Employee? employee = _context.Employees.Find(Id);
+            Employee? employee = _unitOfWork.Employees.GetById(Id);
+            //Employee? employee = _context.Employees.Find(Id);
             if (employee == null)
             {
                 return NotFound();//like 404 error
             }
             return View(employee);
         }
+        [Authorize(Policy = PermissionsNames.EmployeesDelete)]
         [HttpPost]
         public IActionResult Delete(Employee employee)
-        { 
-            _context.Employees.Remove(employee);
-            _context.SaveChanges();
+        {
+            _unitOfWork.Employees.Delete(employee);
+            _unitOfWork.Save();
+            //_context.Employees.Remove(employee);
+            //_context.SaveChanges();
             return RedirectToAction("Index");
 
         }
@@ -155,14 +186,14 @@ namespace ThirdGroup_1.Controllers
             {
                 return NotFound();
             }
-            Employee? emp = _context.Employees.FirstOrDefault(d=> name == d.EmployeeName);
-
+            //Employee? emp = _context.Employees.FirstOrDefault(d=> name == d.EmployeeName);
+            Employee emp = _unitOfWork.Employees.GetEmployeebyName(name); 
             return RedirectToAction("Details", new { id = emp.EmployeeId });
             //return RedirectToAction("Details", emp.EmployeeId);
         }
-        public void LoadDepartents() 
-        {
-            List<Department> departments = _context.Department.ToList();
+        private void LoadDepartents()
+        {/*_context.Department.ToList()*/
+            IEnumerable<Department> departments  = _unitOfWork.Departments.GetAll() ;
             ViewBag.Departments = new SelectList(departments, "Id", "Name");
         }
 

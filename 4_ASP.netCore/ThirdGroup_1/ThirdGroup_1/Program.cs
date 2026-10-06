@@ -2,6 +2,10 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.EntityFrameworkCore;
 using ThirdGroup_1.Data;
 using ThirdGroup_1.Models;
+using ThirdGroup_1.Repositories.Base;
+using ThirdGroup_1.Repositories.EmployeeRepository;
+using ThirdGroup_1.Repositories.Roles;
+using ThirdGroup_1.Repositories.Users;
 using ThirdGroup_1.Security;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,12 +15,18 @@ builder.Services.AddControllersWithViews();
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+builder.Services.AddScoped(typeof(IEmployeeRepository),typeof(EmployeeRepository) );
+builder.Services.AddScoped(typeof(IUserRepository), typeof(UserRepository));
+builder.Services.AddScoped(typeof(IRoleRepository), typeof(RoleRepository));
+
+builder.Services.AddScoped(typeof(IUnitOfWork), typeof(UnitOfWork));
 //Cookie Authenticantion
 builder.Services.AddAuthentication
            (CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options=>
            {
                options.LoginPath = "/Account/Login";
-               options.AccessDeniedPath = "/";
+               options.AccessDeniedPath = "/Account/AccessDenied";
                options.ExpireTimeSpan = TimeSpan.FromMinutes(30);
                options.SlidingExpiration = true;
                options.Cookie.Name = "SystemManagement.Auth";

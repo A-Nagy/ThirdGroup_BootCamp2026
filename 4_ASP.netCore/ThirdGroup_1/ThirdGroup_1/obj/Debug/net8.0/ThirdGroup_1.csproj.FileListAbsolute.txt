@@ -264,3 +264,4 @@ H:\Bootcamp\3-ThirdGroup_BootCamp2026\4_ASP.netCore\ThirdGroup_1\ThirdGroup_1\bi
 H:\Bootcamp\3-ThirdGroup_BootCamp2026\4_ASP.netCore\ThirdGroup_1\ThirdGroup_1\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Scripting.resources.dll
 H:\Bootcamp\3-ThirdGroup_BootCamp2026\4_ASP.netCore\ThirdGroup_1\ThirdGroup_1\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Scripting.resources.dll
 H:\Bootcamp\3-ThirdGroup_BootCamp2026\4_ASP.netCore\ThirdGroup_1\ThirdGroup_1\obj\Debug\net8.0\scopedcss\Views\Shared\_LayoutLogin.cshtml.rz.scp.css
+H:\Bootcamp\3-ThirdGroup_BootCamp2026\4_ASP.netCore\ThirdGroup_1\ThirdGroup_1\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout - Copy.cshtml.rz.scp.css

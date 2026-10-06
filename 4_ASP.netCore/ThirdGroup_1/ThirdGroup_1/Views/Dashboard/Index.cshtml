@@ -1,0 +1,50 @@
+﻿@using ThirdGroup_1.Security
+
+@{
+    ViewData["Title"] = "Dashboard";
+}
+
+
+<h1>Welcome , @User.Identity?.Name</h1>
+<hr />
+<div class="row">
+    @if (User.HasClaim("Permission", PermissionsNames.EmployeesView))
+    {
+        <div class=" col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Employees </h5>
+                    <a asp-controller="Employees" asp-action="Index" class="btn btn-primary">Open Employees</a>
+                </div>
+            </div>
+
+        </div>
+        
+    }
+    @if (User.HasClaim("Permission", PermissionsNames.DepartmentsView))
+    {
+        <div class=" col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Departments </h5>
+                    <a asp-controller="Departments" asp-action="Index" class="btn btn-primary">Open Departments</a>
+                </div>
+            </div>
+
+        </div>
+
+    }
+    @if (User.IsInRole("Admin"))
+    {
+        <div class=" col-md-4 mb-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5>Adminstration </h5>
+                    <a asp-controller="Users" asp-action="Index" class="btn btn-primary">Open Users</a>
+                </div>
+            </div>
+
+        </div>
+
+    }
+</div>

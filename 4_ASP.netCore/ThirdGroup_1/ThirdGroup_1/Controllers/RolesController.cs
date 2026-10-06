@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,7 @@ using ThirdGroup_1.Models;
 
 namespace ThirdGroup_1.Controllers
 {
+    [Authorize(Roles ="Admin")]
     public class RolesController : Controller
     {
         private readonly AppDbContext _context;
